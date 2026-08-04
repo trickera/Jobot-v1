@@ -7,7 +7,7 @@ contra o seu currículo e mostra o que falta antes de você se candidatar.
 
 ## Download
 
-**[Baixar JoBot v1 para Windows](../../releases/latest)** — `JoBot Setup 1.0.0.exe`, 615 MB.
+**[Baixar JoBot v1 para Windows](../../releases/latest)** — `JoBot.Setup.1.0.0.exe`, 615 MB.
 
 O instalador é grande porque já vem com tudo embutido: o runtime Python e o
 navegador usado para abrir as páginas de vaga. Não precisa instalar mais nada.
@@ -19,7 +19,7 @@ navegador usado para abrir as páginas de vaga. Não precisa instalar mais nada.
 Para conferir o arquivo antes de instalar:
 
 ```powershell
-Get-FileHash "JoBot Setup 1.0.0.exe" -Algorithm SHA256
+Get-FileHash "JoBot.Setup.1.0.0.exe" -Algorithm SHA256
 ```
 
 ```text
