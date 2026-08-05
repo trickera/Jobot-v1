@@ -1,7 +1,7 @@
 # JoBot
 
 Aplicativo desktop para Windows que busca vagas em vários sites, pontua cada uma
-contra o seu currículo e mostra o que falta antes de você se candidatar.
+contra o seu currículo e ajusta o currículo para ATS antes de você se candidatar.
 
 ![Resultados de busca no JoBot](docs/screenshots/search-results.png)
 
@@ -37,8 +37,10 @@ Requisitos: Windows 10 ou 11, 64 bits. Instala por usuário, sem pedir admin.
   separando o que vale revisar do que ficou abaixo do corte.
 - **Mostra o porquê da nota:** quais requisitos da vaga não têm evidência no seu
   currículo, em vez de só cuspir um número.
-- **Resume Studio:** diagnóstico do currículo, ajuste para uma vaga específica e
-  export em PDF. O diagnóstico e o export funcionam offline, sem chave de IA.
+- **Resume Studio:** diagnóstico do currículo com score ATS, ajuste para uma vaga
+  específica e export em PDF com template ATS. Mostra o score antes e depois, e
+  cada sugestão vem com a evidência que a sustenta, sem inventar experiência que
+  você não tem. O diagnóstico e o export funcionam offline, sem chave de IA.
 - **Vagas salvas, candidaturas e histórico** ficam no banco local.
 
 ## Privacidade
