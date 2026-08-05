@@ -1,0 +1,290 @@
+.precision-library {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 12%, rgba(109, 114, 230, 0.055), transparent 28%),
+    var(--canvas);
+}
+
+.precision-library .precision-library-header {
+  min-height: 96px;
+  padding: 20px clamp(20px, 3vw, 34px);
+  background: rgba(10, 11, 13, 0.88);
+}
+
+.precision-library-eyebrow,
+.precision-library-section-heading span,
+.precision-history-query > span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--accent-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.precision-library .precision-library-header h1 {
+  color: var(--text-strong);
+  font-size: 22px;
+  letter-spacing: -0.025em;
+}
+
+.precision-library .precision-library-header p {
+  color: var(--muted);
+}
+
+.precision-refresh-button {
+  min-width: 108px;
+}
+
+.precision-library-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.precision-library-state {
+  margin: auto;
+  padding: 30px;
+}
+
+.precision-library-section-heading {
+  display: flex;
+  min-height: 58px;
+  padding: 12px clamp(20px, 3vw, 34px);
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.precision-library-section-heading span {
+  margin-bottom: 2px;
+  color: var(--muted);
+}
+
+.precision-library-section-heading strong {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.precision-library .precision-library-grid {
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  padding: 18px clamp(20px, 3vw, 34px) 28px;
+  gap: 10px;
+}
+
+.precision-library .precision-library-card {
+  position: relative;
+  min-height: 210px;
+  padding: 16px;
+  gap: 14px;
+  overflow: hidden;
+  border-color: var(--border);
+  background: rgba(16, 17, 20, 0.92);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.018);
+  transition: border-color 160ms ease, background 160ms ease, transform 180ms var(--motion-ease);
+}
+
+.precision-library .precision-library-card:hover {
+  border-color: rgba(154, 160, 240, 0.28);
+  background: var(--surface-raised);
+  transform: translateY(-1px);
+}
+
+.precision-library-job {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 62px;
+  align-items: start;
+  gap: 12px;
+}
+
+.precision-library-job-copy {
+  min-width: 0;
+}
+
+.precision-library-job-copy .source-badge {
+  margin-bottom: 10px;
+}
+
+.precision-library .precision-library-job h2 {
+  margin-bottom: 5px;
+  color: var(--text-strong);
+  font-size: 15px;
+  line-height: 1.32;
+}
+
+.precision-library .precision-library-job p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.precision-library-card-footnote {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 10.5px;
+}
+
+.precision-library-card-footnote svg {
+  flex: 0 0 auto;
+  color: var(--accent-soft);
+}
+
+.precision-library .precision-library-card-meta {
+  min-height: 26px;
+  justify-content: flex-start;
+}
+
+.precision-library .precision-library-card-meta small {
+  margin-left: auto;
+  color: var(--muted);
+}
+
+.precision-status-chip {
+  display: inline-flex;
+  min-height: 23px;
+  padding: 3px 8px;
+  align-items: center;
+  border: 1px solid rgba(70, 209, 138, 0.24);
+  border-radius: 999px;
+  background: rgba(70, 209, 138, 0.075);
+  color: var(--success-soft) !important;
+  font-size: 9.5px !important;
+}
+
+.precision-library .precision-library-actions {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.precision-library .precision-library-actions .primary-button {
+  min-height: 34px;
+}
+
+.precision-library-remove {
+  min-height: 34px;
+  padding: 0 9px;
+}
+
+.precision-library .precision-history-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 14px clamp(20px, 3vw, 34px) 28px;
+  gap: 6px;
+}
+
+.precision-library .precision-history-card {
+  display: grid;
+  min-height: 82px;
+  grid-template-columns: 38px minmax(0, 1fr) minmax(120px, auto);
+  padding: 13px 16px;
+  align-items: center;
+  gap: 14px;
+  background: rgba(16, 17, 20, 0.86);
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.precision-library .precision-history-card:hover {
+  border-color: rgba(154, 160, 240, 0.24);
+  background: var(--surface-raised);
+}
+
+.precision-history-index {
+  color: var(--quiet);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+}
+
+.precision-history-query {
+  min-width: 0;
+}
+
+.precision-history-query > span {
+  margin-bottom: 3px;
+  color: var(--muted);
+}
+
+.precision-library .precision-history-query h2 {
+  overflow: hidden;
+  color: var(--text-strong);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.precision-library .precision-history-query p {
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.precision-library .precision-history-result {
+  min-width: 136px;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+  justify-content: end;
+  column-gap: 5px;
+}
+
+.precision-library .precision-history-result strong {
+  color: var(--text-strong);
+  font-size: 19px;
+}
+
+.precision-library .precision-history-result > span {
+  color: var(--muted);
+}
+
+.precision-library .precision-history-result small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
+
+@media (max-width: 1040px) {
+  .precision-library .precision-library-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .precision-library .precision-library-header {
+    min-height: 88px;
+    padding: 16px 18px;
+  }
+
+  .precision-library .precision-library-grid {
+    grid-template-columns: 1fr;
+    padding-inline: 18px;
+  }
+
+  .precision-library .precision-history-card {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .precision-library .precision-history-result {
+    grid-column: 2;
+    min-width: 0;
+    justify-content: start;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .precision-library .precision-library-card,
+  .precision-library .precision-library-card::before,
+  .precision-library .precision-history-card {
+    transition: none;
+  }
+
+  .precision-library .precision-library-card:hover {
+    transform: none;
+  }
+}

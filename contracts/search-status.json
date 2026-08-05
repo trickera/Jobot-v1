@@ -1,0 +1,60 @@
+{
+  "running": false,
+  "message": "Synthetic search complete.",
+  "total": 1,
+  "jobs": [
+    {
+      "id": "fixture-job-001",
+      "source": "synthetic",
+      "title": "Platform Engineer",
+      "company": "Example Orbit Labs",
+      "location": "Example City",
+      "url": "https://example.com/jobs/fixture-job-001",
+      "status": "new",
+      "score": 82,
+      "missingKeywords": [],
+      "description": "Build reliable services for a fictional platform.",
+      "profile": "synthetic-platform",
+      "scoreSource": "offline_no_key",
+      "scoreReason": "Synthetic fixture score",
+      "scoringPending": false,
+      "savedAt": "2026-01-01T00:00:00Z"
+    }
+  ],
+  "lowScoreJobs": [],
+  "diagnostics": {
+    "collected": 1,
+    "fresh": 1,
+    "evaluated": 1,
+    "approved": 1,
+    "discarded": 0,
+    "dropped": 0,
+    "skippedNoDescription": 0,
+    "detailFetched": 1,
+    "timedOut": false,
+    "droppedDuplicate": 0,
+    "droppedDateWindow": 0,
+    "droppedSeniority": 0,
+    "droppedBlacklist": 0,
+    "droppedFakeRemote": 0,
+    "sources": {
+      "synthetic": {
+        "collected": 1,
+        "fresh": 1,
+        "evaluated": 1,
+        "approved": 1,
+        "discarded": 0,
+        "dropped": 0,
+        "skippedNoDescription": 0,
+        "detailFetched": 1,
+        "blocked": false
+      }
+    },
+    "suggestions": [],
+    "aiQuotaExhausted": false,
+    "aiConsentRequired": false,
+    "scoredOffline": 1,
+    "scoredFromCache": 0,
+    "skippedByPrefilter": 0
+  }
+}

@@ -1,0 +1,8 @@
+{"name":"start","request":{"cmd":"start","headless":true},"response":{"ok":true}}
+{"name":"fetch_normal","request":{"cmd":"fetch","url":"https://example.com/jobs","waitUntil":"domcontentloaded","waitForSelector":""},"response":{"ok":true,"html":"<main>Example jobs</main>","blocked":false}}
+{"name":"fetch_blocked","request":{"cmd":"fetch","url":"https://example.com/blocked","waitUntil":"domcontentloaded","waitForSelector":""},"response":{"ok":true,"html":"<title>Security Verification</title>","blocked":true}}
+{"name":"fetch_gupy","request":{"cmd":"fetch_gupy","url":"https://example.com/jobs/api"},"response":{"ok":true,"records":[{"id":"fixture-job-001","title":"Platform Engineer","careerPageUrl":"https://example.com/jobs/fixture-job-001"}],"html":"<main>Example jobs</main>"}}
+{"name":"warm_indeed","request":{"cmd":"warm_indeed"},"response":{"ok":true}}
+{"name":"invalid_json","requestLine":"{\"cmd\":","response":{"ok":false,"error":"invalid json: synthetic malformed request"}}
+{"name":"unknown_command","request":{"cmd":"unknown_command"},"response":{"ok":false,"error":"unknown cmd: unknown_command"}}
+{"name":"close","request":{"cmd":"close"},"response":{"ok":true}}

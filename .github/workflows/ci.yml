@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# A newer push to the same branch makes the in-flight run irrelevant.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    # Windows, not Linux: this is the platform the app ships on, and the package
+    # does not cross-compile (browser_worker.go uses Windows-only SysProcAttr
+    # fields). Testing on Linux would test something we never ship.
+    name: backend (go)
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: apps/backend-go
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: apps/backend-go/go.mod
+          cache-dependency-path: apps/backend-go/go.sum
+
+      - run: go build ./...
+      - run: go vet ./...
+      - run: go test -count=1 ./...
+
+  frontend:
+    name: frontend (typescript)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      # The build only runs tsc and vite; the Electron binary is never launched.
+      - run: npm ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: 1
+
+      - run: npm run build
+      - run: npm test
+      - run: npm run test:public-privacy
+      - run: npm run electron:build
+
+  browser-worker:
+    name: browser worker (python)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - run: npm run test:browser-worker

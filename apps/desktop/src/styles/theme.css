@@ -1,0 +1,173 @@
+/* Theme layer for the approved Precision system. Domain views keep their
+   existing markup and handlers; this file only remaps their visual surfaces. */
+
+html.is-theme-changing *,
+html.is-theme-changing *::before,
+html.is-theme-changing *::after {
+  transition-property: background-color, border-color, box-shadow, color, fill, stroke !important;
+  transition-duration: var(--motion-theme) !important;
+  transition-timing-function: var(--motion-ease) !important;
+}
+
+[data-theme="light"] body,
+[data-theme="light"] #root,
+[data-theme="light"] .app-shell,
+[data-theme="light"] main,
+[data-theme="light"] .workspace,
+[data-theme="light"] .view-stage {
+  background: var(--canvas);
+}
+
+[data-theme="light"] .titlebar,
+[data-theme="light"] .sidebar {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+[data-theme="light"] .window-controls button:hover {
+  background: rgba(23, 24, 28, 0.06);
+}
+
+[data-theme="light"] .window-controls .close-button:hover {
+  background: rgba(194, 64, 64, 0.1);
+}
+
+[data-theme="light"] .nav-button:hover,
+[data-theme="light"] .search-workspace .search-plan-disclosure:hover:not(:disabled),
+[data-theme="light"] .settings-workspace .settings-nav-item:hover,
+[data-theme="light"] .resume-secondary-disclosure > summary:hover,
+[data-theme="light"] .resume-secondary-disclosure > summary:focus-visible {
+  background: rgba(23, 24, 28, 0.045);
+}
+
+[data-theme="light"] .workspace-header,
+[data-theme="light"] .precision-library .precision-library-header,
+[data-theme="light"] .precision-logs .precision-logs-header,
+[data-theme="light"] .resume-studio .workspace-header,
+[data-theme="light"] .settings-workspace .settings-panel-head {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .precision-library,
+[data-theme="light"] .precision-logs,
+[data-theme="light"] .workspace.resume-studio {
+  background: radial-gradient(circle at 86% 8%, rgba(81, 87, 216, 0.055), transparent 30%), var(--canvas);
+}
+
+[data-theme="light"] .precision-library .precision-library-card,
+[data-theme="light"] .precision-library .precision-history-card,
+[data-theme="light"] .resume-workflow-overview,
+[data-theme="light"] .resume-studio .resume-block,
+[data-theme="light"] .settings-workspace .precision-provider-card,
+[data-theme="light"] .settings-workspace .precision-source-card,
+[data-theme="light"] .settings-workspace .precision-surface,
+[data-theme="light"] .settings-workspace .toggle-row,
+[data-theme="light"] .settings-workspace .status-row,
+[data-theme="light"] .settings-workspace .browser-worker-status {
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(23, 24, 28, 0.035);
+}
+
+[data-theme="light"] .resume-block-header,
+[data-theme="light"] .resume-studio .resume-issue,
+[data-theme="light"] .resume-comparison-metric,
+[data-theme="light"] .settings-workspace .precision-summary-badge,
+[data-theme="light"] .settings-workspace .precision-status-chip {
+  background: rgba(23, 24, 28, 0.025);
+}
+
+[data-theme="light"] .search-workspace .search-plan-grid > div,
+[data-theme="light"] .resume-studio .resume-dropzone,
+[data-theme="light"] .resume-diagnosis-metrics,
+[data-theme="light"] .resume-studio .readiness-strip,
+[data-theme="light"] .resume-studio .resume-review-card,
+[data-theme="light"] .resume-studio .resume-progress,
+[data-theme="light"] .resume-studio .diff-rejected,
+[data-theme="light"] .resume-studio .gap-card,
+[data-theme="light"] .resume-studio .diff-card,
+[data-theme="light"] .resume-score-comparison,
+[data-theme="light"] .resume-studio .ats-breakdown {
+  background: var(--surface-raised);
+}
+
+[data-theme="light"] .settings-workspace .settings-sidebar {
+  background: #f0f1f4;
+}
+
+[data-theme="light"] .settings-workspace .settings-panel {
+  background: var(--canvas);
+}
+
+[data-theme="light"] .settings-workspace .settings-field input,
+[data-theme="light"] .settings-workspace .settings-field select,
+[data-theme="light"] .settings-workspace .settings-field textarea,
+[data-theme="light"] .resume-studio .settings-field input,
+[data-theme="light"] .resume-studio .settings-field select,
+[data-theme="light"] .resume-studio .settings-field textarea,
+[data-theme="light"] .settings-field input,
+[data-theme="light"] .settings-field select,
+[data-theme="light"] .settings-field textarea {
+  background: var(--input);
+  color-scheme: light;
+}
+
+[data-theme="light"] .settings-field select option {
+  background: var(--surface);
+  color: var(--text);
+}
+
+[data-theme="light"] .resume-metric-tooltip {
+  background: var(--overlay);
+  box-shadow: 0 12px 32px rgba(23, 24, 28, 0.14);
+}
+
+[data-theme="light"] .precision-logs .precision-log-console,
+[data-theme="light"] .log-console {
+  background: linear-gradient(90deg, rgba(81, 87, 216, 0.035) 1px, transparent 1px) 0 0 / 34px 100%, #fff;
+}
+
+[data-theme="light"] .precision-logs .precision-log-line {
+  border-bottom-color: rgba(23, 24, 28, 0.06);
+}
+
+[data-theme="light"] .precision-logs .precision-log-line:hover {
+  background: rgba(23, 24, 28, 0.025);
+}
+
+[data-theme="light"] .resume-preview-scrim {
+  background: rgba(23, 24, 28, 0.38);
+}
+
+.resume-preview-document {
+  background: #08090b;
+}
+
+[data-theme="light"] .resume-preview-document {
+  background: #e7e9ee;
+}
+
+[data-theme="light"] .resume-preview-loading.is-overlay {
+  background: rgba(245, 246, 248, 0.78);
+}
+
+[data-theme="light"] .resume-template-thumb {
+  border-color: rgba(23, 24, 28, 0.14);
+  box-shadow: 0 6px 18px rgba(23, 24, 28, 0.08);
+}
+
+[data-theme="light"] .integration-logo--openai .integration-logo-image,
+[data-theme="light"] .integration-logo--groq .integration-logo-image {
+  filter: none;
+}
+
+:root:not([data-theme="light"]) .integration-logo--openai .integration-logo-image,
+:root:not([data-theme="light"]) .integration-logo--groq .integration-logo-image {
+  filter: invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-theme-changing *,
+  html.is-theme-changing *::before,
+  html.is-theme-changing *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,31 @@
+<Configuration>
+  <!--
+    Installer hardening Phase 6: Windows Sandbox configuration for a true
+    clean-OS installer run. Launched by scripts/qa/windows-sandbox-smoke.ps1,
+    which stages the real NSIS installer plus this repo's clean-install-smoke
+    scripts into a mapped folder before starting the Sandbox.
+
+    MappedFolders is read-only so the Sandbox can never write back into the
+    host repo; the smoke script inside the Sandbox writes its report to
+    C:\Users\WDAGUtilityAccount\Desktop\sandbox-report (a Sandbox-local path)
+    and windows-sandbox-smoke.ps1 copies it back out via a shared writable
+    folder listed below.
+  -->
+  <VGpu>Disable</VGpu>
+  <Networking>Enable</Networking>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>{{STAGE_DIR}}</HostFolder>
+      <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\stage</SandboxFolder>
+      <ReadOnly>true</ReadOnly>
+    </MappedFolder>
+    <MappedFolder>
+      <HostFolder>{{REPORT_DIR}}</HostFolder>
+      <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop\sandbox-report</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <LogonCommand>
+    <Command>powershell -NoProfile -ExecutionPolicy Bypass -File "C:\Users\WDAGUtilityAccount\Desktop\stage\sandbox-inner-smoke.ps1"</Command>
+  </LogonCommand>
+</Configuration>

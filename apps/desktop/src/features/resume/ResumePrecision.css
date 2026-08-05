@@ -1,0 +1,679 @@
+/* Resume Studio — Precision treatment.
+   Everything is scoped to the feature so Search, Settings and library screens
+   keep their own layout contracts. */
+
+.workspace.resume-studio {
+  gap: 14px;
+  padding-bottom: 32px;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(109, 114, 230, 0.055), transparent 30%),
+    var(--canvas);
+  scrollbar-gutter: stable;
+}
+
+.resume-studio .workspace-header {
+  min-height: 92px;
+  padding: 20px 28px;
+  background: rgba(10, 11, 13, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.resume-studio-heading {
+  width: 100%;
+}
+
+.resume-studio-heading > p {
+  max-width: 660px;
+  color: var(--muted);
+}
+
+.resume-workflow-overview,
+.resume-studio > .inline-notice,
+.resume-studio > .resume-block {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.resume-workflow-overview {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(16, 17, 20, 0.92);
+  overflow: hidden;
+}
+
+.resume-workflow-overview ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resume-workflow-overview li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 10px;
+  padding: 13px 15px;
+  border-right: 1px solid var(--border);
+  color: var(--dim);
+}
+
+.resume-workflow-overview li:last-child {
+  border-right: 0;
+}
+
+.resume-workflow-overview li::after {
+  position: absolute;
+  right: -1px;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: transparent;
+  content: "";
+}
+
+.resume-workflow-overview li.is-current::after {
+  background: var(--accent);
+}
+
+.resume-workflow-overview li.is-ready::after {
+  background: rgba(70, 209, 138, 0.72);
+}
+
+.resume-workflow-index {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--quiet);
+}
+
+.resume-workflow-overview li > span:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.resume-workflow-overview strong {
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.resume-workflow-overview small {
+  color: var(--muted);
+  font-size: 10.5px;
+}
+
+.resume-workflow-overview li.is-ready .resume-workflow-index {
+  color: var(--success-soft);
+}
+
+.resume-workflow-overview li.is-current .resume-workflow-index {
+  color: var(--accent-soft);
+}
+
+.resume-workflow-overview > p {
+  margin: 0;
+  padding: 8px 14px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.resume-studio .resume-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(16, 17, 20, 0.72);
+  overflow: clip;
+}
+
+.resume-block-header {
+  display: grid;
+  grid-template-columns: 156px minmax(0, 1fr);
+  gap: 18px;
+  padding: 17px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.resume-block-eyebrow {
+  padding-top: 3px;
+  color: var(--accent-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.resume-block-header h2,
+.resume-block-header p,
+.resume-subsection-title h3,
+.resume-subsection-title h4 {
+  margin: 0;
+}
+
+.resume-block-header h2 {
+  color: var(--text-strong);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.resume-block-header p {
+  max-width: 720px;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.resume-studio .resume-subsection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px 20px;
+  background: transparent;
+}
+
+.resume-studio .resume-subsection + .resume-subsection,
+.resume-studio .resume-subsection + .resume-secondary-disclosure,
+.resume-studio .resume-secondary-disclosure + .resume-secondary-disclosure {
+  border-top: 1px solid var(--border);
+}
+
+.resume-subsection-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resume-subsection-title h3,
+.resume-subsection-title h4 {
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.resume-subsection-title > span {
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9.5px;
+  text-align: right;
+}
+
+.resume-studio .resume-input-toggle {
+  margin-bottom: -2px;
+}
+
+.resume-studio .resume-dropzone {
+  min-height: 142px;
+  border-color: var(--border-strong);
+  border-radius: var(--radius-md);
+  background: rgba(10, 11, 13, 0.56);
+}
+
+.resume-studio .resume-dropzone:hover,
+.resume-studio .resume-dropzone:focus-visible {
+  border-color: rgba(154, 160, 240, 0.62);
+  background: rgba(109, 114, 230, 0.045);
+}
+
+.resume-studio .settings-field > span {
+  color: var(--muted);
+}
+
+.resume-studio .settings-field input,
+.resume-studio .settings-field select,
+.resume-studio .settings-field textarea {
+  border-color: var(--border);
+  background: rgba(8, 9, 11, 0.78);
+}
+
+.resume-studio .settings-field input:focus,
+.resume-studio .settings-field select:focus,
+.resume-studio .settings-field textarea:focus {
+  border-color: rgba(154, 160, 240, 0.64);
+  box-shadow: 0 0 0 2px rgba(109, 114, 230, 0.1);
+}
+
+.resume-tailor-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  gap: 10px;
+}
+
+.resume-diagnosis-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resume-diagnosis-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(8, 9, 11, 0.56);
+  overflow: visible;
+}
+
+.resume-diagnosis-metric {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 4px;
+  padding: 13px 11px;
+  border-right: 1px solid var(--border);
+}
+
+.resume-diagnosis-metric:last-child {
+  border-right: 0;
+}
+
+.resume-diagnosis-metric .match-gauge {
+  transform: scale(0.88);
+  transform-origin: center;
+}
+
+.resume-diagnosis-metric.is-unmeasured .match-gauge-value {
+  opacity: 0;
+}
+
+.resume-diagnosis-metric-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.resume-diagnosis-metric-copy > span,
+.resume-comparison-target {
+  color: var(--muted);
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+
+.resume-metric-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.resume-metric-label strong {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.resume-metric-help-wrap {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.resume-metric-help {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  line-height: 1;
+  cursor: help;
+}
+
+.resume-metric-tooltip {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 7px);
+  left: 50%;
+  width: min(270px, 58vw);
+  padding: 8px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: #111318;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38);
+  color: var(--text-soft);
+  font-size: 10.5px;
+  line-height: 1.45;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -3px);
+  transition: opacity 140ms ease, transform 160ms var(--motion-ease);
+}
+
+.resume-metric-help-wrap:hover .resume-metric-tooltip,
+.resume-metric-help-wrap:focus-within .resume-metric-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.resume-metric-help:hover,
+.resume-metric-help:focus-visible {
+  border-color: var(--accent-soft);
+  color: var(--accent-soft);
+  outline: 2px solid rgba(154, 160, 240, 0.52);
+  outline-offset: 2px;
+}
+
+.resume-diagnosis-findings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resume-studio .resume-issue {
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.resume-studio .readiness-strip,
+.resume-studio .resume-review-card,
+.resume-studio .resume-progress,
+.resume-studio .diff-rejected {
+  border-radius: var(--radius-md);
+  background: rgba(8, 9, 11, 0.58);
+  box-shadow: none;
+}
+
+.resume-studio .gap-card-grid,
+.resume-studio .diff-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.resume-studio .gap-card,
+.resume-studio .diff-card {
+  border-radius: var(--radius-sm);
+  background: rgba(8, 9, 11, 0.48);
+  box-shadow: none;
+}
+
+.resume-score-result {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.resume-score-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(8, 9, 11, 0.56);
+  overflow: visible;
+}
+
+.resume-score-comparison-column {
+  padding: 14px;
+}
+
+.resume-score-comparison-column + .resume-score-comparison-column {
+  border-left: 1px solid var(--border);
+}
+
+.resume-score-comparison-column.is-after {
+  background: rgba(109, 114, 230, 0.035);
+}
+
+.resume-score-comparison-column > h4 {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.resume-comparison-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.resume-comparison-metric {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  gap: 2px 8px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.resume-comparison-metric .match-gauge {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  transform: scale(0.86);
+  transform-origin: right center;
+}
+
+.resume-comparison-metric.is-target .resume-comparison-target {
+  color: var(--success-soft);
+}
+
+.resume-score-breakdown-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resume-studio .ats-breakdown {
+  max-width: none;
+  margin-top: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(8, 9, 11, 0.42);
+  overflow: hidden;
+}
+
+.resume-studio .ats-breakdown-row {
+  min-width: 0;
+}
+
+.resume-studio .ats-breakdown-row > * {
+  overflow-wrap: anywhere;
+}
+
+.resume-secondary-disclosure {
+  margin: 0;
+  background: transparent;
+}
+
+.resume-secondary-disclosure > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 50px;
+  padding: 11px 20px;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+}
+
+.resume-secondary-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.resume-secondary-disclosure > summary::after {
+  content: "+";
+  color: var(--accent-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+}
+
+.resume-secondary-disclosure[open] > summary::after {
+  content: "-";
+}
+
+.resume-secondary-disclosure > summary span {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.resume-secondary-disclosure > summary small {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 400;
+}
+
+.resume-secondary-disclosure > summary:hover,
+.resume-secondary-disclosure > summary:focus-visible {
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.resume-secondary-disclosure > summary:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: -2px;
+}
+
+.resume-disclosure-body,
+.resume-score-result > .resume-secondary-disclosure > .ats-breakdown {
+  margin: 0 20px 18px;
+}
+
+.resume-score-result > .resume-secondary-disclosure {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.resume-score-result > .resume-secondary-disclosure > summary {
+  min-height: 44px;
+  padding-inline: 13px;
+}
+
+.resume-score-result > .resume-secondary-disclosure > .ats-breakdown {
+  margin: 0 12px 12px;
+}
+
+.resume-studio .template-gallery,
+.resume-studio .resume-export-panel,
+.resume-studio .resume-versions-panel,
+.resume-studio .cover-letter-panel {
+  box-shadow: none;
+}
+
+.resume-studio .resume-save-version {
+  padding-top: 4px;
+}
+
+@media (max-width: 1040px) {
+  .resume-workflow-overview,
+  .resume-studio > .inline-notice,
+  .resume-studio > .resume-block {
+    width: calc(100% - 28px);
+  }
+
+  .resume-diagnosis-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resume-diagnosis-metric:nth-child(2) {
+    border-right: 0;
+  }
+
+  .resume-diagnosis-metric:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .resume-comparison-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .resume-studio .workspace-header {
+    padding-inline: 18px;
+  }
+
+  .resume-workflow-overview ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resume-workflow-overview li:nth-child(2) {
+    border-right: 0;
+  }
+
+  .resume-workflow-overview li:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .resume-block-header {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .resume-studio .resume-subsection,
+  .resume-block-header {
+    padding-inline: 14px;
+  }
+
+  .resume-score-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-tailor-options {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-score-comparison-column + .resume-score-comparison-column {
+    border-top: 1px solid var(--border);
+    border-left: 0;
+  }
+
+  .resume-subsection-title,
+  .resume-secondary-disclosure > summary {
+    align-items: flex-start;
+  }
+
+  .resume-secondary-disclosure > summary small {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .resume-diagnosis-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-diagnosis-metric,
+  .resume-diagnosis-metric:nth-child(2) {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .resume-diagnosis-metric:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resume-studio *,
+  .resume-studio *::before,
+  .resume-studio *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

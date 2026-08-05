@@ -1,0 +1,72 @@
+appId: com.sencia.job
+# Public brand only: productName drives the shortcut label and the installer
+# file name. It does NOT drive the install directory (that comes from
+# extraMetadata.name below) and it does NOT drive app.getName(), so renaming it
+# moves no user data. appId stays com.sencia.job so existing installs upgrade.
+productName: JoBot
+
+# The per-user install directory is NOT productName. electron-builder derives it
+# from the npm package name (getWindowsInstallationDirName only consults
+# productName when !oneClick || perMachine, and this is a one-click per-user
+# install), so "@sencia/desktop" was landing users in
+# %LOCALAPPDATA%\Programs\@senciadesktop. extraMetadata overrides the name in the
+# packaged metadata only — the workspace is still @sencia/desktop to npm.
+#
+# Safe with respect to user data: the app data directory is a hardcoded
+# "Sencia Job" in both backend.ts (resolveAppDataDir) and Go (os.UserConfigDir),
+# not derived from app.getName(), so no existing database moves.
+extraMetadata:
+  name: Sencia Job
+
+directories:
+  output: ../../release/electron
+
+files:
+  - dist/**
+  - dist-electron/**
+  # Source maps stay local: they ship the full main/preload source and are
+  # useless inside the installed package.
+  - "!dist-electron/**/*.map"
+  - package.json
+
+extraResources:
+  - from: ../backend-go/bin/sencia-job-backend.exe
+    to: backend/sencia-job-backend.exe
+  - from: ../browser-worker
+    to: backend/backend-browser
+    filter:
+      - worker.py
+  - from: ../../resources/python
+    to: backend/python
+  - from: ../../resources/camoufox
+    to: backend/camoufox
+
+win:
+  target: nsis
+  icon: ../../resources/icons/app.ico
+  # Code signing (installer hardening Phase 8, docs/architecture/CODE-SIGNING-PREPARATION.md):
+  # no certificate is configured - do NOT commit a certificate path or password
+  # here. electron-builder signs automatically via signtool.exe when the
+  # standard CSC_LINK/CSC_KEY_PASSWORD (or WIN_CSC_LINK/WIN_CSC_KEY_PASSWORD)
+  # env vars are set at build time; no YAML field is needed for that path. If
+  # the certificate instead lives in the Windows certificate store (common for
+  # hardware-token/HSM-delivered EV certs), use signtoolOptions here instead:
+  # signtoolOptions:
+  #   certificateSha1: "<thumbprint>"
+  #   # or: certificateSubjectName: "<legal entity name on the certificate>"
+
+# Installer hardening Phase 7 (installer UX/uninstall). oneClick/perMachine
+# are electron-builder's own NSIS defaults (kept explicit here so the choice
+# is documented, not accidental): per-user install under
+# %LOCALAPPDATA%\Programs\Sencia Job, no admin elevation required.
+# deleteAppDataOnUninstall:false is also electron-builder's default when
+# unset - kept explicit for the same reason - the generated uninstaller
+# keeps %APPDATA%\Sencia Job (local DB, resumes, exports) unless launched
+# with `Uninstall Sencia Job.exe --delete-app-data`, so a normal uninstall
+# never silently destroys a user's local data.
+nsis:
+  oneClick: true
+  perMachine: false
+  deleteAppDataOnUninstall: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true

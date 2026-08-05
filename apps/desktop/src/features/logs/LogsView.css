@@ -1,0 +1,177 @@
+.precision-logs {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 84% 10%, rgba(109, 114, 230, 0.05), transparent 27%),
+    var(--canvas);
+}
+
+.precision-logs .precision-logs-header {
+  min-height: 96px;
+  padding: 20px clamp(20px, 3vw, 34px);
+  background: rgba(10, 11, 13, 0.9);
+}
+
+.precision-logs-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--accent-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.precision-logs .precision-logs-header h1 {
+  color: var(--text-strong);
+  font-size: 22px;
+  letter-spacing: -0.025em;
+}
+
+.precision-logs .precision-logs-header p {
+  color: var(--muted);
+}
+
+.precision-logs-refresh {
+  min-width: 108px;
+}
+
+.precision-logs .precision-logs-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.precision-logs-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: 18px clamp(20px, 3vw, 34px) 28px;
+  flex-direction: column;
+}
+
+.precision-logs-console-heading {
+  display: flex;
+  min-height: 42px;
+  padding: 0 13px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--surface-raised);
+  color: var(--muted);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.precision-logs-console-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.precision-logs-console-heading strong {
+  color: var(--text-soft);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.precision-console-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 4px rgba(70, 209, 138, 0.08);
+}
+
+.precision-logs .precision-log-console {
+  display: block;
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 7px 0;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  background:
+    linear-gradient(90deg, rgba(109, 114, 230, 0.025) 1px, transparent 1px) 0 0 / 34px 100%,
+    #070809;
+  animation: none;
+}
+
+.precision-logs .precision-log-state {
+  height: 100%;
+  min-height: 260px;
+}
+
+.precision-log-unavailable .empty-icon {
+  border-color: rgba(255, 155, 155, 0.2);
+  background: rgba(255, 93, 93, 0.05);
+  color: var(--danger);
+}
+
+.precision-logs .precision-log-line {
+  display: grid;
+  min-height: 30px;
+  grid-template-columns: 72px 58px minmax(0, 1fr);
+  padding: 6px 13px;
+  align-items: start;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.precision-logs .precision-log-line:last-child {
+  border-bottom: 0;
+}
+
+.precision-log-line time {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.precision-log-level {
+  color: currentColor;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.precision-log-message {
+  min-width: 0;
+  color: currentColor;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.precision-logs .precision-log-line:hover {
+  background: rgba(255, 255, 255, 0.018);
+}
+
+@media (max-width: 760px) {
+  .precision-logs .precision-logs-header {
+    min-height: 88px;
+    padding: 16px 18px;
+  }
+
+  .precision-logs-content {
+    padding: 14px 18px 20px;
+  }
+
+  .precision-logs .precision-log-line {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+
+  .precision-log-level {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .precision-logs .precision-log-line {
+    scroll-behavior: auto;
+  }
+}

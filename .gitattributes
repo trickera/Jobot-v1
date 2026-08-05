@@ -1,0 +1,28 @@
+# Normalize line endings: LF in the repo, auto on checkout.
+* text=auto eol=lf
+
+# Windows-native scripts keep CRLF.
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Generated artifacts: keep them versioned (they are the cross-model context
+# budget, see CLAUDE.md) but keep them out of the language stats and diffs.
+# graphify-out/graph.html alone is 3.8 MB, which made GitHub report the project
+# as 73% HTML.
+graphify-out/** linguist-generated=true
+
+# Captured page fixtures, not authored source.
+apps/backend-go/internal/server/testdata/** linguist-vendored=true
+
+# Treat binaries as binary (no EOL/diff munging).
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+*.exe binary
+*.dll binary

@@ -1,0 +1,48 @@
+{
+  "name": "@sencia/desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JoBot React renderer and Electron desktop shell",
+  "author": "JoBot",
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "npm run typecheck && vite build",
+    "test": "vitest run",
+    "typecheck:renderer": "tsc -p tsconfig.json --noEmit",
+    "typecheck:electron": "tsc -p electron/tsconfig.json --noEmit",
+    "typecheck": "npm run typecheck:renderer && npm run typecheck:electron",
+    "electron:build": "node ../../scripts/dev/build-electron.mjs",
+    "electron:watch": "node ../../scripts/dev/build-electron.mjs --watch",
+    "electron:dev": "concurrently -k -n vite,esbuild,electron \"npm:dev\" \"npm:electron:watch\" \"wait-on http://127.0.0.1:1420 dist-electron/main.cjs && cross-env NODE_ENV=development electron .\"",
+    "prepackage": "node ../../scripts/qa/check-package-personal-data.mjs",
+    "package": "electron-builder --config electron-builder.yml"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "lucide-react": "^1.23.0",
+    "pdfjs-dist": "^6.1.200",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^10.0.4",
+    "cross-env": "^10.1.0",
+    "electron": "43.1.0",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.1",
+    "jsdom": "^29.1.1",
+    "playwright-core": "^1.61.1",
+    "typescript": "^5.8.0",
+    "vite": "^7.0.0",
+    "vitest": "^4.1.10",
+    "wait-on": "^9.0.10"
+  }
+}

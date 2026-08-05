@@ -1,0 +1,528 @@
+{
+  "contractVersion": 1,
+  "canonical": {
+    "schemaVersion": 2,
+    "basics": {
+      "name": "Avery Example",
+      "headline": "Platform Engineer",
+      "email": "avery@example.com",
+      "phone": "+1 202 555 0101",
+      "location": "Example City",
+      "links": [
+        {
+          "label": "Portfolio",
+          "url": "https://example.com/avery"
+        }
+      ]
+    },
+    "target": {
+      "jobTitle": "Platform Engineer",
+      "category": "Software",
+      "seniority": "mid"
+    },
+    "summary": "Platform engineer building small, dependable services.",
+    "skills": {
+      "hard": ["Go"],
+      "soft": ["Communication"],
+      "tools": ["SQLite"]
+    },
+    "experience": [
+      {
+        "company": "Example Orbit Labs",
+        "role": "Platform Engineer",
+        "start": "2022-01",
+        "end": "present",
+        "location": "Example City",
+        "bullets": ["Built a small service with Go and SQLite."]
+      }
+    ],
+    "education": [
+      {
+        "institution": "Example Technical Institute",
+        "degree": "BSc",
+        "area": "Computer Systems",
+        "start": "2018",
+        "end": "2021"
+      }
+    ],
+    "projects": [
+      {
+        "name": "Example Queue",
+        "description": "A fictional queue service used for contract tests.",
+        "url": "https://example.com/projects/queue",
+        "bullets": ["Documented a deterministic local workflow."]
+      }
+    ],
+    "licenses": [],
+    "certifications": [],
+    "languages": [
+      {
+        "language": "English",
+        "fluency": "professional"
+      }
+    ],
+    "confirmedSkills": ["Go"]
+  },
+  "requirements": {
+    "category": "Software",
+    "jobTitle": "Platform Engineer",
+    "hardRequirements": ["Go"],
+    "niceToHave": ["SQLite"],
+    "seniority": "mid",
+    "atsKeywords": ["platform", "services"]
+  },
+  "gap": {
+    "found": [
+      {
+        "term": "Go",
+        "evidence": "experience[0].bullets[0]"
+      }
+    ],
+    "partial": [
+      {
+        "term": "platform",
+        "evidence": ["basics.headline", "target.jobTitle"]
+      }
+    ],
+    "missing": [],
+    "toConfirm": [
+      {
+        "term": "observability",
+        "evidence": "not found in fixture"
+      }
+    ]
+  },
+  "patches": [
+    {
+      "op": "replace",
+      "path": "/summary",
+      "value": "Platform engineer building dependable Go services.",
+      "reason": "Align wording with the target role.",
+      "reviewRisk": "high_rewrite_distance"
+    },
+    {
+      "op": "add",
+      "path": "/skills/tools/-",
+      "value": "SQLite",
+      "reason": "Surface an existing tool.",
+      "reviewRisk": "new_skill"
+    },
+    {
+      "op": "remove",
+      "path": "/projects/0/bullets/0",
+      "reason": "Remove a redundant bullet.",
+      "reviewRisk": "unsupported_claim"
+    }
+  ],
+  "parseResponse": {
+    "documentId": "fixture-document-001",
+    "canonical": {
+      "schemaVersion": 2,
+      "basics": {
+        "name": "Avery Example",
+        "headline": "Platform Engineer",
+        "email": "avery@example.com",
+        "phone": "+1 202 555 0101",
+        "location": "Example City",
+        "links": [
+          {
+            "label": "Portfolio",
+            "url": "https://example.com/avery"
+          }
+        ]
+      },
+      "target": {
+        "jobTitle": "Platform Engineer",
+        "category": "Software",
+        "seniority": "mid"
+      },
+      "summary": "Platform engineer building small, dependable services.",
+      "skills": {
+        "hard": ["Go"],
+        "soft": ["Communication"],
+        "tools": ["SQLite"]
+      },
+      "experience": [],
+      "education": [],
+      "projects": [],
+      "licenses": [],
+      "certifications": [],
+      "languages": [],
+      "confirmedSkills": []
+    },
+    "warnings": [],
+    "providerUsed": "synthetic"
+  },
+  "diagnoseResponse": {
+    "scores": {
+      "readability": 90,
+      "content": 80,
+      "impact": 70,
+      "keywords": 85,
+      "impactMeasured": true
+    },
+    "issues": [
+      {
+        "code": "fixture_note",
+        "severity": "low",
+        "message": "Synthetic diagnostic issue."
+      }
+    ],
+    "canonical": {
+      "schemaVersion": 2,
+      "basics": {
+        "name": "Avery Example",
+        "headline": "Platform Engineer",
+        "email": "avery@example.com",
+        "phone": "+1 202 555 0101",
+        "location": "Example City",
+        "links": []
+      },
+      "target": {
+        "jobTitle": "Platform Engineer",
+        "category": "Software",
+        "seniority": "mid"
+      },
+      "summary": "Platform engineer building small, dependable services.",
+      "skills": {
+        "hard": ["Go"],
+        "soft": [],
+        "tools": ["SQLite"]
+      },
+      "experience": [],
+      "education": [],
+      "projects": [],
+      "licenses": [],
+      "certifications": [],
+      "languages": []
+    },
+    "heuristic": true
+  },
+  "analyzeJobResponse": {
+    "requirements": {
+      "category": "Software",
+      "jobTitle": "Platform Engineer",
+      "hardRequirements": ["Go"],
+      "niceToHave": ["SQLite"],
+      "seniority": "mid",
+      "atsKeywords": ["platform", "services"]
+    },
+    "providerUsed": "synthetic"
+  },
+  "gapResponse": {
+    "gap": {
+      "found": [],
+      "partial": [],
+      "missing": [],
+      "toConfirm": []
+    },
+    "providerUsed": "synthetic"
+  },
+  "optimizeResponse": {
+    "patches": [],
+    "preview": {
+      "schemaVersion": 2,
+      "basics": {
+        "name": "Avery Example",
+        "headline": "Platform Engineer",
+        "email": "avery@example.com",
+        "phone": "+1 202 555 0101",
+        "location": "Example City",
+        "links": []
+      },
+      "target": {
+        "jobTitle": "Platform Engineer",
+        "category": "Software",
+        "seniority": "mid"
+      },
+      "summary": "Platform engineer building small, dependable services.",
+      "skills": {
+        "hard": ["Go"],
+        "soft": [],
+        "tools": ["SQLite"]
+      },
+      "experience": [],
+      "education": [],
+      "projects": [],
+      "licenses": [],
+      "certifications": [],
+      "languages": [],
+      "confirmedSkills": []
+    },
+    "rejected": [],
+    "providerUsed": "synthetic"
+  },
+  "scoreResponse": {
+    "ats": 82,
+    "hr": 76,
+    "atsBreakdown": {
+      "keywords": 85,
+      "readability": 90
+    },
+    "hrBreakdown": {
+      "clarity": 78,
+      "evidence": 74
+    }
+  },
+  "exportRequest": {
+    "canonical": {
+      "schemaVersion": 2,
+      "basics": {
+        "name": "Avery Example",
+        "headline": "Platform Engineer",
+        "email": "avery@example.com",
+        "phone": "+1 202 555 0101",
+        "location": "Example City",
+        "links": []
+      },
+      "target": {
+        "jobTitle": "Platform Engineer",
+        "category": "Software",
+        "seniority": "mid"
+      },
+      "summary": "Platform engineer building small, dependable services.",
+      "skills": {
+        "hard": [],
+        "soft": [],
+        "tools": []
+      },
+      "experience": [],
+      "education": [],
+      "projects": [],
+      "licenses": [],
+      "certifications": [],
+      "languages": []
+    },
+    "format": "md",
+    "templateId": "ats-classic",
+    "pageSize": "letter"
+  },
+  "exportResponse": {
+    "format": "md",
+    "content": "# Avery Example\n\nPlatform Engineer\n",
+    "fileName": "avery-example.md"
+  },
+  "saveVersionResponse": {
+    "id": "fixture-version-001"
+  },
+  "renameVersionResponse": {
+    "id": "fixture-version-001",
+    "name": "Synthetic tailored version"
+  },
+  "asyncJobStatus": {
+    "running": {
+      "state": "running"
+    },
+    "done": {
+      "state": "done",
+      "status": 200,
+      "result": {
+        "message": "Synthetic async result."
+      }
+    }
+  },
+  "errorCodes": [
+    "missing_name",
+    "invalid_ai_json",
+    "ai_timeout",
+    "ai_consent_required",
+    "ai_operation_budget_spent",
+    "ai_budget_spent",
+    "ai_quota_exhausted",
+    "ai_model_unavailable",
+    "ai_rate_limited",
+    "ai_key_invalid",
+    "ai_key_required",
+    "ai_unavailable",
+    "invalid_file",
+    "unsupported_format",
+    "file_too_large",
+    "empty_resume_text",
+    "ocr_not_installed",
+    "ocr_no_text",
+    "ocr_timeout",
+    "ocr_failed",
+    "invalid_request",
+    "internal_error",
+    "empty_job_description",
+    "unknown_operation",
+    "job_not_found",
+    "version_not_found"
+  ],
+  "errorResponses": [
+    {"code": "missing_name", "message": "Synthetic missing name error."},
+    {"code": "invalid_ai_json", "message": "Synthetic invalid AI JSON error."},
+    {"code": "ai_timeout", "message": "Synthetic AI timeout error."},
+    {"code": "ai_consent_required", "message": "Synthetic AI consent error."},
+    {"code": "ai_operation_budget_spent", "message": "Synthetic operation budget error."},
+    {"code": "ai_budget_spent", "message": "Synthetic daily budget error."},
+    {"code": "ai_quota_exhausted", "message": "Synthetic provider quota error."},
+    {"code": "ai_model_unavailable", "message": "Synthetic model unavailable error."},
+    {"code": "ai_rate_limited", "message": "Synthetic rate limit error."},
+    {"code": "ai_key_invalid", "message": "Synthetic invalid key error."},
+    {"code": "ai_key_required", "message": "Synthetic AI key required error."},
+    {"code": "ai_unavailable", "message": "Synthetic AI unavailable error."},
+    {"code": "invalid_file", "message": "Synthetic invalid file error."},
+    {"code": "unsupported_format", "message": "Synthetic unsupported format error."},
+    {"code": "file_too_large", "message": "Synthetic file too large error."},
+    {"code": "empty_resume_text", "message": "Synthetic empty resume text error."},
+    {"code": "ocr_not_installed", "message": "Synthetic OCR unavailable error."},
+    {"code": "ocr_no_text", "message": "Synthetic OCR no text error."},
+    {"code": "ocr_timeout", "message": "Synthetic OCR timeout error."},
+    {"code": "ocr_failed", "message": "Synthetic OCR failed error."},
+    {"code": "invalid_request", "message": "Synthetic invalid request error."},
+    {"code": "internal_error", "message": "Synthetic internal error."},
+    {"code": "empty_job_description", "message": "Synthetic empty job description error."},
+    {"code": "unknown_operation", "message": "Synthetic unknown operation error."},
+    {"code": "job_not_found", "message": "Synthetic job not found error."},
+    {"code": "version_not_found", "message": "Synthetic version not found error."}
+  ],
+  "saveVersionRequest": {
+    "documentId": "fixture-document-001",
+    "jobId": "fixture-job-001",
+    "canonical": {
+      "schemaVersion": 2,
+      "basics": {
+        "name": "Avery Example",
+        "headline": "Platform Engineer",
+        "email": "avery@example.com",
+        "phone": "+1 202 555 0101",
+        "location": "Example City",
+        "links": []
+      },
+      "target": {
+        "jobTitle": "Platform Engineer",
+        "category": "Software",
+        "seniority": "mid"
+      },
+      "summary": "Platform engineer building small, dependable services.",
+      "skills": {
+        "hard": [],
+        "soft": [],
+        "tools": []
+      },
+      "experience": [],
+      "education": [],
+      "projects": [],
+      "licenses": [],
+      "certifications": [],
+      "languages": []
+    },
+    "patches": [],
+    "templateId": "ats-classic",
+    "atsScore": 82,
+    "hrScore": 76,
+    "gap": {
+      "found": [],
+      "partial": [],
+      "missing": [],
+      "toConfirm": []
+    }
+  },
+  "versionsResponse": {
+    "versions": [
+      {
+        "id": "fixture-version-001",
+        "name": "Synthetic baseline",
+        "documentId": "fixture-document-001",
+        "jobId": "fixture-job-001",
+        "canonical": {
+          "schemaVersion": 2,
+          "basics": {
+            "name": "Avery Example",
+            "headline": "Platform Engineer",
+            "email": "avery@example.com",
+            "phone": "+1 202 555 0101",
+            "location": "Example City",
+            "links": []
+          },
+          "target": {
+            "jobTitle": "Platform Engineer",
+            "category": "Software",
+            "seniority": "mid"
+          },
+          "summary": "Platform engineer building small, dependable services.",
+          "skills": {
+            "hard": [],
+            "soft": [],
+            "tools": []
+          },
+          "experience": [],
+          "education": [],
+          "projects": [],
+          "licenses": [],
+          "certifications": [],
+          "languages": []
+        },
+        "patches": [],
+        "templateId": "ats-classic",
+        "atsScore": 82,
+        "hrScore": 76,
+        "createdAt": "2026-01-01T00:00:00Z"
+      }
+    ]
+  },
+  "templatesResponse": {
+    "templates": [
+      {
+        "id": "ats-classic",
+        "name": "ATS Classic",
+        "category": "professional",
+        "engine": "pure-go",
+        "isAts": true
+      }
+    ]
+  },
+  "coverLetterRequest": {
+    "canonical": {
+      "schemaVersion": 2,
+      "basics": {
+        "name": "Avery Example",
+        "headline": "Platform Engineer",
+        "email": "avery@example.com",
+        "phone": "+1 202 555 0101",
+        "location": "Example City",
+        "links": []
+      },
+      "target": {
+        "jobTitle": "Platform Engineer",
+        "category": "Software",
+        "seniority": "mid"
+      },
+      "summary": "Platform engineer building small, dependable services.",
+      "skills": {
+        "hard": [],
+        "soft": [],
+        "tools": []
+      },
+      "experience": [],
+      "education": [],
+      "projects": [],
+      "licenses": [],
+      "certifications": [],
+      "languages": []
+    },
+    "jobId": "fixture-job-001",
+    "jobDescription": "A synthetic platform engineering role.",
+    "company": "Example Orbit Labs",
+    "role": "Platform Engineer",
+    "language": "en",
+    "tone": "professional",
+    "maxWords": 180,
+    "gap": {
+      "found": [],
+      "partial": [],
+      "missing": [],
+      "toConfirm": []
+    },
+    "confirmed": ["Go"]
+  },
+  "coverLetterResponse": {
+    "id": "fixture-letter-001",
+    "markdown": "Dear Example Orbit Labs team,\n\nI am interested in the platform engineering role.",
+    "plainText": "Dear Example Orbit Labs team,\n\nI am interested in the platform engineering role.",
+    "warnings": [],
+    "requiresConfirmation": false,
+    "providerUsed": "synthetic"
+  }
+}

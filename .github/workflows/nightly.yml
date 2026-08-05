@@ -1,0 +1,110 @@
+name: Nightly
+
+# The PR CI runs build/vet/test/tsc — the layer that, by this project's own
+# history, caught none of the bugs. The checks that DO catch them exercise real
+# behaviour, so they live here, on a schedule, plus manual dispatch.
+on:
+  schedule:
+    - cron: "0 6 * * *" # 06:00 UTC daily
+  workflow_dispatch:
+
+concurrency:
+  group: nightly-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Deeper than the PR gate: the race detector, and a real check that the five
+  # free job boards are still up and still the shape the parser expects. The
+  # fixture tests only prove the parser reads a frozen 2026-07-12 response; a
+  # board changing its JSON (the failure mode that killed Indeed silently) shows
+  # up only here.
+  deep:
+    name: race + live boards
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: apps/backend-go/go.mod
+          cache-dependency-path: apps/backend-go/go.sum
+
+      - name: go test -race
+        working-directory: apps/backend-go
+        run: go test -race -count=1 ./...
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      # No key, no browser — the same HTTP calls the Go collector makes. If a
+      # board is down or reshaped this fails and names it.
+      - name: free job boards are live
+        run: node scripts/qa/check-free-boards.mjs
+
+  # The end-to-end smokes that drive the packaged .exe. Packaging and the
+  # keyless remote-sources smoke always run, so forks still exercise the shipped
+  # binary. Provider-dependent smokes need a real AI key and self-skip when it is
+  # not configured. Radar-notification-smoke is deliberately NOT here (it needs
+  # an interactive desktop session to show a Windows toast).
+  #
+  # To enable: add SENCIA_FRESH_API_KEY as a repository secret. Run on demand via
+  # the "Run workflow" button; it also runs nightly once the secret exists.
+  packaged-smokes:
+    name: packaged .exe smokes (keyless + optional provider)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: check for the AI key
+        id: key
+        shell: bash
+        env:
+          SENCIA_FRESH_API_KEY: ${{ secrets.SENCIA_FRESH_API_KEY }}
+        run: |
+          if [ -n "$SENCIA_FRESH_API_KEY" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "SENCIA_FRESH_API_KEY is not set — skipping provider packaged smokes; the keyless smoke still runs. Add it as a repo secret to enable provider coverage."
+          fi
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: apps/backend-go/go.mod
+          cache-dependency-path: apps/backend-go/go.sum
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: npm ci
+        env:
+          ELECTRON_SKIP_BINARY_DOWNLOAD: 0
+
+      - name: install browser worker (Python + Camoufox)
+        run: npm run browser:install
+
+      - name: build the installable package
+        run: npm run release:electron
+
+      # This smoke needs no AI key: scoring is offline, but the source calls are
+      # live/network-dependent. It must run on forks as well as the main repository.
+      - name: drive keyless packaged smoke
+        env:
+          SENCIA_APP_EXE: ${{ github.workspace }}\release\electron\win-unpacked\Sencia Job.exe
+        run: node scripts/qa/remote-sources-smoke.mjs
+
+      # These smokes call the configured provider and therefore remain optional.
+      - if: steps.key.outputs.present == 'true'
+        name: drive provider packaged smokes
+        env:
+          SENCIA_FRESH_API_KEY: ${{ secrets.SENCIA_FRESH_API_KEY }}
+          SENCIA_APP_EXE: ${{ github.workspace }}\release\electron\win-unpacked\Sencia Job.exe
+        run: |
+          node scripts/qa/packaged-ai-smoke.mjs
+          node scripts/qa/diverse-resume-smoke.mjs

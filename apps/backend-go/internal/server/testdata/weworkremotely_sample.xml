@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss">
+  <channel>
+    <title>We Work Remotely: Remote jobs in design, programming, marketing and more</title>
+    <link>https://weworkremotely.com/categories/remote-programming-jobs.rss</link>
+    <description>We Work Remotely: Remote jobs in design, programming, marketing and more</description>
+    <language>en-US</language>
+    <ttl>60</ttl>
+    <item>
+      <title>Coin Market Cap: Technical AI Product Manager</title>
+      <region>Anywhere in the World</region>
+      <category>Full-Stack Programming</category>
+      <description>
+
+&lt;p&gt;
+  &lt;strong&gt;Headquarters:&lt;/strong&gt; Global / Dubai / Hong Kong / Singapore
+&lt;/p&gt;
+
+&lt;div class="content"&gt;&lt;div class="section-wrapper page-full-width"&gt;&lt;div class="section page-centered"&gt;&lt;div&gt;&lt;span&gt;About the role&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;CoinMarketCap is building AI products to help users discover, understand, and act on crypto information more effectively. We’re hiring a Technical AI Product Manager to join our AI team. This is an individual contributor role in the Product org. You’ll spend most of your time building and iterating: identifying user pain points, prototyping in Python, prompt engineering, context engineering, and improving AI features we’ve already shipped based on real usage and &lt;/span&gt;&lt;a class="postings-link" href="http://feedback.Once"&gt;&lt;span&gt;feedback.Once&lt;/span&gt;&lt;/a&gt;&lt;span&gt; an MVP is validated, you’ll partner with Engineering to productionize and scale it. You are not responsible for long-term platform scalability or owning the full engineering surface area. You are responsible for producing strong prototypes and handing Engineering a clear, validated direction.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;What you’ll do&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Includes but not limited to:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;1. Identify the biggest user pain points where a crypto AI can materially improve outcomes.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;2. Turn ambiguous ideas into a clear MVP, with crisp scope, constraints, and success metrics.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;3. Prototype full AI experiences in Python to validate value and quality before we ship to production. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;4. Own prompts and context engineering: instruction design, context shaping, guardrails, tool/function calling patterns, and output formatting.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;5. Build practical evaluation loops: golden sets, scenario coverage, qualitative rubrics, regressions, and acceptance criteria.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;6. Design the AI user experience: make it clear, trustworthy, and resilient if things go wrong.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;7. Run fast experiments, learn from real outputs and usage data, and iterate quickly.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;8. Partner with Engineering to ship: provide handoff specs, edge cases, evaluation results, and support debugging and iteration post-launch.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;9. Work on whatever surface is the highest leverage.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;What we’re looking for&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;a class="postings-link" href="http://1.Strong"&gt;&lt;span&gt;1.&lt;/span&gt;&lt;span&gt;Strong&lt;/span&gt;&lt;/a&gt;&lt;span&gt; product judgment and the ability to make good calls under ambiguity.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;2. Hands-on Python prototyping ability: you move fast, write clean code, and can translate ideas into working prototypes.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;3. Practical LLM experience + intuition: you understand prompt iteration, context design, and have a strong intuition for how to build useful products on top of LLMsA strong evaluation mindset: you can define quality, test for failure modes, and prevent regressions without heavy process.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;4. High-agency execution: you can go from “vague problem” → “shipped learning” with minimal supervision.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;5. Excellent communication skills (verbal and written): convey complex messages clearly and simply, and driving conviction across stakeholders.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;Nice to have&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;a class="postings-link" href="http://1.Shipped"&gt;&lt;span&gt;1.&lt;/span&gt;&lt;span&gt;Shipped&lt;/span&gt;&lt;/a&gt;&lt;span&gt; user-facing AI features (chat, agents, copilots, summarization, search/Q&amp;amp;A, personalization).&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;2. 0 to 1 experience in fast-moving environments and owning ambiguous problems end-to-end. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;3. Experience building tool-using and agent-like workflows. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;4. Experience and interest in cryptocurrency. &lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;We have a strong preference for candidates who can point to things they’ve built (prototypes, side projects, or shipped features) and explain how they navigated ambiguity to reach a useful outcome.  To stand out, include examples of these in your application.&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;To apply:&lt;/strong&gt; &lt;a href="https://weworkremotely.com/remote-jobs/coin-market-cap-technical-ai-product-manager"&gt;https://weworkremotely.com/remote-jobs/coin-market-cap-technical-ai-product-manager&lt;/a&gt;&lt;/p&gt;
+</description>
+      <pubDate>Tue, 30 Jun 2026 20:30:55 +0000</pubDate>
+      <guid>https://weworkremotely.com/remote-jobs/coin-market-cap-technical-ai-product-manager</guid>
+      <link>https://weworkremotely.com/remote-jobs/coin-market-cap-technical-ai-product-manager</link>
+    </item>
+    <item>
+      <title>Lemon.io: Senior React Native Developer</title>
+      <region>Anywhere in the World</region>
+      <category>Full-Stack Programming</category>
+      <description>
+
+&lt;p&gt;
+  &lt;strong&gt;Headquarters:&lt;/strong&gt; New York, NY
+    &lt;br /&gt;&lt;strong&gt;URL:&lt;/strong&gt; &lt;a href="https://lemon.io"&gt;https://lemon.io&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Are you a talented Senior Developer looking for a remote job that lets you show your skills and get decent compensation? Look no further than &lt;a href="https://lemon.io/for-developers/?utm_source=weworkremotely&amp;amp;utm_medium=job_ad&amp;amp;utm_campaign=supply_en_react_native/node/react_jun_2026_job_ad"&gt;Lemon.io&lt;/a&gt; — the marketplace that connects you with hand-picked startups in the US and Europe.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;What we offer:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The rate depends on your seniority level, skills and experience. We've already paid out over $11M to our engineers.&lt;/li&gt;
+&lt;li&gt;No more hunting for clients or negotiating rates — let us handle the business side of things so you can focus on what you do best.&lt;/li&gt;
+&lt;li&gt;We'll manually find the best project for you according to your skills and preferences.&lt;/li&gt;
+&lt;li&gt;Choose a schedule that works best for you. It’s possible to communicate async or minimally overlap within team working hours.&lt;/li&gt;
+&lt;li&gt;We respect your seniority so you can expect no micromanagement or screen trackers.&lt;/li&gt;
+&lt;li&gt;Communicate directly with the clients. Most of them have technical backgrounds. Sounds good, yeah?&lt;/li&gt;
+&lt;li&gt;We will support you from the time you submit the application throughout all cooperation stages.&lt;/li&gt;
+&lt;li&gt;Most of our projects involve working in a fast-paced startup environment. We hope you like it as much as we do.&lt;/li&gt;
+&lt;li&gt;Through our community, we will connect you with the best developers from more than 75 countries.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Requirements for React Native &amp;amp; React Developer’s position:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4+ years of software development experience&lt;/li&gt;
+&lt;li&gt;2+ years of experience with React and 4+ years of experience with React Native&lt;br&gt;OR&lt;br&gt;4+ years of experience with React and 2+ years of experience with React Native&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Requirements for React Native &amp;amp; Node Developer’s position:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4+ years of software development experience&lt;/li&gt;
+&lt;li&gt;2+ years of experience with Node and 4+ years of experience with React Native&lt;br&gt;OR&lt;br&gt;4+ years of experience with Node and 2+ years of experience with React Native&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Requirements for React Native &amp;amp; Node &amp;amp; React Developer’s position:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;4+ years of software development experience&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;3+ years of experience with Node&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;4+ years of experience with React Native and 2+ years of experience with React&lt;br&gt;OR&lt;br&gt;2+ years of experience with React Native and 3+ years of experience with React&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Strong technical skills: as a Senior Developer, you are expected to be able to create projects from scratch and have a deep understanding of application architecture.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clear and effective communication in English — advanced ability to discuss business tasks, justify decisions, and communicate issues. Good self-presentation is also essential for upcoming client calls.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Strong self-organizational skills — ability to work full-time remotely with no supervision.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reliability — we want to trust you and expect that you won’t let us and the client down.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Adaptability and Flexibility — the ability to onboard the project promptly after accepting it and start delivering results quickly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sounds good for you? Apply now and join the &lt;a href="https://lemon.io/for-developers/?utm_source=weworkremotely&amp;amp;utm_medium=job_ad&amp;amp;utm_campaign=supply_en_react_native/node/react_jun_2026_job_ad"&gt;Lemon.io&lt;/a&gt; community!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOT YOUR TECH STACK?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We have a variety of projects, so if you have 4+ years of commercial software development experience and are proficient in AI Agent Architecture, AI Automation Architecture, AI Engineering, Site Reliability Engineering, Platform Engineering, React &amp;amp; Python, React &amp;amp; Golang, Golang, React &amp;amp; Java, React &amp;amp; Ruby, Ruby, PHP &amp;amp; Vue, Vue &amp;amp; Node.js, React &amp;amp; .NET, Android &amp;amp; iOS, iOS &amp;amp; Swift, Flutter, Blockchain (Ethereum/Ethers.js/Wagmi/Viem/Solana), Angular &amp;amp; Node.js, Vue &amp;amp; .NET, Python &amp;amp; Vue, DevOps, MLOps, Data Science, Angular &amp;amp; PHP, Angular &amp;amp; .NET, Symfony &amp;amp; React, Symfony &amp;amp; Vue, Symfony &amp;amp; Angular, Python, Symfony &amp;amp; JavaScript &amp;amp; Next.js &amp;amp; TypeScript, Data Analysis, React &amp;amp; PHP, Data Engineering, Project Management, Product Management, QA Automation, QA Manual, Embedded Software Engineering, React Native &amp;amp; Ruby, React Native &amp;amp; Python, WordPress, Android, Data Annotation, Angular, Python &amp;amp; Node, React &amp;amp; Node.js, Java &amp;amp; Spring, Svelte &amp;amp; Python, Svelte &amp;amp; Node.js, Svelte &amp;amp; TypeScript, Rust, Shopify &amp;amp; JavaScript, Vue &amp;amp; Nuxt, PHP &amp;amp; Laravel, UI/UX Design, Animation, Graphic Design, .NET &amp;amp; C#, Electron, Scala, C++, Unreal Engine &amp;amp; C++, Python &amp;amp; LLM, Unity, or Machine Learning Engineering, we would be happy to connect with you and match you with a project that fits your experience.&lt;/p&gt;
+&lt;p&gt;We do not provide visa assistance, and our cooperation model does not include the benefits typically offered with direct hire.&lt;/p&gt;
+&lt;p&gt;We work with developers from 75+ countries across Europe, Latin America, North America (the U.S. and Canada), selected countries in Asia (Japan, Singapore, South Korea, the Philippines, Indonesia, Malaysia, Vietnam, Thailand, and Israel), Oceania (Australia, New Zealand, and Papua New Guinea), and Africa (including Morocco and South Africa).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To apply:&lt;/strong&gt; &lt;a href="https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer"&gt;https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer&lt;/a&gt;&lt;/p&gt;
+</description>
+      <pubDate>Thu, 25 Jun 2026 14:11:50 +0000</pubDate>
+      <guid>https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer</guid>
+      <link>https://weworkremotely.com/remote-jobs/lemon-io-senior-react-native-developer</link>
+    </item>
+    </channel>
+</rss>

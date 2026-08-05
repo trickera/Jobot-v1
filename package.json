@@ -1,0 +1,39 @@
+{
+  "name": "sencia-job-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JoBot monorepo",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "workspaces": [
+    "apps/desktop"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @sencia/desktop",
+    "preview": "npm run preview --workspace @sencia/desktop",
+    "build": "npm run build --workspace @sencia/desktop",
+    "postbuild": "node scripts/qa/check-package-personal-data.mjs",
+    "test": "npm run test --workspace @sencia/desktop",
+    "posttest": "node scripts/qa/check-package-personal-data.mjs --self-test",
+    "test:package-privacy": "node scripts/qa/check-package-personal-data.mjs --self-test",
+    "typecheck": "npm run typecheck --workspace @sencia/desktop",
+    "browser:install": "py -3 -m pip install -r apps\\browser-worker\\requirements.lock.txt && py -3 -m camoufox fetch",
+    "browser:lock": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/dev/refresh-python-lock.ps1",
+    "test:browser-worker": "py -3 -m unittest discover -v -s apps\\browser-worker\\tests -p \"test_*.py\"",
+    "test:public-privacy": "node --test scripts/qa/check-public-release-privacy.test.mjs && node scripts/qa/check-public-release-privacy.mjs --self-test",
+    "release:pack-python": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/release/pack-python.ps1",
+    "release:pack-camoufox": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/release/pack-camoufox.ps1",
+    "backend:build": "go -C apps/backend-go build -trimpath -ldflags=-H=windowsgui -o bin\\sencia-job-backend.exe .\\cmd\\sencia-job",
+    "mini:test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/qa/mini-test.ps1",
+    "mini:test:self-test": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/qa/mini-test.ps1 -SelfTestSearchPolling",
+    "electron:build": "npm run electron:build --workspace @sencia/desktop",
+    "electron:watch": "npm run electron:watch --workspace @sencia/desktop",
+    "electron:dev": "npm run electron:dev --workspace @sencia/desktop",
+    "desktop:package": "npm run package --workspace @sencia/desktop",
+    "predesktop:package": "node scripts/qa/check-package-personal-data.mjs",
+    "graphify:refresh": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/graphify/refresh.ps1",
+    "graphify:refresh:bash": "bash scripts/graphify/refresh.sh",
+    "release:electron": "npm run release:pack-python && npm run release:pack-camoufox && npm run backend:build && npm run build && npm run electron:build && npm run desktop:package"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "tesseract": {
+    "version": "5.4.0.20240606",
+    "url": "https://github.com/UB-Mannheim/tesseract/releases/download/v5.4.0.20240606/tesseract-ocr-w64-setup-5.4.0.20240606.exe",
+    "sha256": "c885fff6998e0608ba4bb8ab51436e1c6775c2bafc2559a19b423e18678b60c9",
+    "kind": "installer",
+    "fileName": "tesseract-ocr-w64-setup-5.4.0.20240606.exe"
+  },
+  "poppler": {
+    "version": "26.02.0-0",
+    "url": "https://github.com/oschwartz10612/poppler-windows/releases/download/v26.02.0-0/Release-26.02.0-0.zip",
+    "sha256": "993e4a94376ed712fafc7058d724ea0b943d118bbd2305cd9ed55174eb85cda5",
+    "kind": "zip",
+    "fileName": "poppler-26.02.0-0.zip",
+    "binarySubpath": "poppler-26.02.0/Library/bin"
+  }
+}
